@@ -1,0 +1,26 @@
+<div class="card">
+  <img
+    src="assets/images/{{ product.image }}"
+    class="card-img"
+    alt="{{ product.title }}"
+  />
+  <div class="card-body">
+    <h5 class="card-title">{{ product.title }}</h5>
+    <p class="card-text">{{ product.description }}</p>
+  </div>
+  <div class="card-footer d-flex justify-content-end">
+    <a class="btn btn-primary me-2">Editar</a>
+    <a class="btn btn-outline-danger">Excluir</a>
+  </div>
+</div>
+
+<!-- <div class="card">
+  <ng-content select="[image]"></ng-content>
+  <div class="card-body">
+    <ng-content select="[body]"></ng-content>
+  </div>
+  <div class="card-footer d-flex justify-content-end">
+    <a class="btn btn-primary me-2">Editar</a>
+    <a class="btn btn-outline-danger">Excluir</a>
+  </div>
+</div> -->
