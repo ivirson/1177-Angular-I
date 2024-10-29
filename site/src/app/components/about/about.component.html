@@ -1,0 +1,9 @@
+<div class="container">
+  <!-- <p>{{ text || "Descrição inexistente" }}</p> -->
+  <!-- <p>{{ getCompanyInfo() }}</p> -->
+  <!-- <p [innerHTML]="getCompanyInfo()"></p> -->
+
+  <p><strong>Empresa:</strong> {{ company.name }}</p>
+  <p><strong>Quem somos:</strong> {{ company.description }}</p>
+  <p><strong>Endereço:</strong> {{ getFormatedAddress(company.adrress) }}</p>
+</div>
