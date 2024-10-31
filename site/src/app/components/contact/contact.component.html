@@ -1,1 +1,30 @@
-<p>contact works!</p>
+<div class="container">
+  <form (submit)="onSubmit()">
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        name="email"
+        placeholder="name@example.com"
+        [(ngModel)]="contact.email"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="message" class="form-label">Mensagem</label>
+      <textarea
+        class="form-control"
+        name="message"
+        rows="3"
+        [(ngModel)]="contact.message"
+      ></textarea>
+    </div>
+    <p>Email: {{ contact.email }}</p>
+    <p>Mensagem: {{ contact.message }}</p>
+    <div class="mb-3">
+      <button class="btn btn-primary">Enviar</button>
+      <button type="reset" class="btn btn-outlined-primary">Limpar</button>
+      <!-- <button (click)="onSubmit()" class="btn btn-primary">Enviar</button> -->
+    </div>
+  </form>
+</div>

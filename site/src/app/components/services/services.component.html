@@ -1,15 +1,15 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-3 text-center">
+    <div class="col-md-3 text-center" *ngIf="currentService === 1">
       <h3>Serviço 1</h3>
-      <p>
+      <p [ngStyle]="{ color: changeGradeColor() }">
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo quam
         doloremque accusamus soluta ipsam, nobis quibusdam? Ipsa quis placeat
         et, facere tenetur porro consequatur culpa, at omnis reprehenderit
         molestiae fuga?
       </p>
     </div>
-    <div class="col-md-3 text-center">
+    <div class="col-md-3 text-center" *ngIf="currentService === 2">
       <h3>Serviço 2</h3>
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo debitis
@@ -18,16 +18,19 @@
         alias.
       </p>
     </div>
-    <div class="col-md-3 text-center">
+    <div class="col-md-3 text-center" *ngIf="currentService === 3">
       <h3>Serviço 3</h3>
-      <p>
+      <p [ngClass]="{ 'cool-text': isCoolText() }">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, amet
         eius? Dolorem blanditiis aliquam soluta consequuntur dolorum, hic sunt
         vitae corporis quaerat qui libero magni! Architecto sequi quidem quo
         enim?
       </p>
     </div>
-    <div class="col-md-3 text-center">
+    <div
+      class="col-md-3 text-center"
+      *ngIf="currentService === 4; else nothing"
+    >
       <h3>Serviço 4</h3>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora odit
@@ -35,5 +38,11 @@
         repellat beatae impedit ipsam ratione sit modi ipsum deserunt.
       </p>
     </div>
+    <ng-template #nothing>
+      <div class="col-md-12">Nenhum serviço associado.</div>
+    </ng-template>
   </div>
 </div>
+<button class="btn btn-primary" (click)="nextService()">Próximo Serviço</button>
+<!-- <p [ngStyle]="{ color: textColor, fontWeight: 'bold' }">{{ grade }}</p>
+<button (click)="changeGradeColor()" class="btn btn-danger">Mudar cor</button> -->

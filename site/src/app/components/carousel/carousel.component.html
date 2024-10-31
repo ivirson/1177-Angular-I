@@ -41,6 +41,7 @@
     type="button"
     data-bs-target="#carouselExampleIndicators"
     data-bs-slide="prev"
+    (click)="onButtonClicked('Prev')"
   >
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
@@ -50,8 +51,11 @@
     type="button"
     data-bs-target="#carouselExampleIndicators"
     data-bs-slide="next"
+    (click)="onButtonClicked('Next')"
   >
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+
+<p>Mensagem: {{ message }}</p>
