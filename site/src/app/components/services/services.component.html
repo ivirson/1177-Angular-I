@@ -1,48 +1,11 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-3 text-center" *ngIf="currentService === 1">
-      <h3>Serviço 1</h3>
-      <p [ngStyle]="{ color: changeGradeColor() }">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo quam
-        doloremque accusamus soluta ipsam, nobis quibusdam? Ipsa quis placeat
-        et, facere tenetur porro consequatur culpa, at omnis reprehenderit
-        molestiae fuga?
-      </p>
-    </div>
-    <div class="col-md-3 text-center" *ngIf="currentService === 2">
-      <h3>Serviço 2</h3>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo debitis
-        voluptas laboriosam repudiandae unde blanditiis numquam sunt nihil. Cum,
-        suscipit. Illo qui vel maiores similique dolore voluptatum ab omnis
-        alias.
-      </p>
-    </div>
-    <div class="col-md-3 text-center" *ngIf="currentService === 3">
-      <h3>Serviço 3</h3>
-      <p [ngClass]="{ 'cool-text': isCoolText() }">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, amet
-        eius? Dolorem blanditiis aliquam soluta consequuntur dolorum, hic sunt
-        vitae corporis quaerat qui libero magni! Architecto sequi quidem quo
-        enim?
-      </p>
-    </div>
     <div
       class="col-md-3 text-center"
-      *ngIf="currentService === 4; else nothing"
+      *ngFor="let service of services; index as i"
     >
-      <h3>Serviço 4</h3>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora odit
-        atque amet numquam, dolor nemo hic repudiandae at iste quod. Harum
-        repellat beatae impedit ipsam ratione sit modi ipsum deserunt.
-      </p>
+      <h3>Serviço {{ i + 1 }}</h3>
+      <p>{{ service.text }}</p>
     </div>
-    <ng-template #nothing>
-      <div class="col-md-12">Nenhum serviço associado.</div>
-    </ng-template>
   </div>
 </div>
-<button class="btn btn-primary" (click)="nextService()">Próximo Serviço</button>
-<!-- <p [ngStyle]="{ color: textColor, fontWeight: 'bold' }">{{ grade }}</p>
-<button (click)="changeGradeColor()" class="btn btn-danger">Mudar cor</button> -->
