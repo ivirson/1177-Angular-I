@@ -4,7 +4,8 @@
       class="col-md-3 text-center"
       *ngFor="let service of services; index as i"
     >
-      <h3>Serviço {{ i + 1 }}</h3>
+      <!-- <h3>Serviço {{ i + 1 }}</h3> -->
+      <h3>{{ service.title }}</h3>
       <p>{{ service.text }}</p>
     </div>
   </div>

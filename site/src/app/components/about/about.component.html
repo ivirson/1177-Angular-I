@@ -4,6 +4,8 @@
   <!-- <p [innerHTML]="getCompanyInfo()"></p> -->
 
   <p><strong>Empresa:</strong> {{ company.name }}</p>
-  <p><strong>Quem somos:</strong> {{ company.description }}</p>
+  <p appHighlight color="red">
+    <strong>Quem somos:</strong> {{ company.description }}
+  </p>
   <p><strong>Endereço:</strong> {{ getFormatedAddress(company.adrress) }}</p>
 </div>

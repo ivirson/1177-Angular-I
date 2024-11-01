@@ -27,6 +27,27 @@
           <li class="nav-item">
             <a class="nav-link disabled" aria-disabled="true">Disabled</a>
           </li>
+          <li class="nav-item">
+            <span>Hoje é </span>
+
+            <ng-container [ngSwitch]="today.getDay()">
+              <span *ngSwitchCase="0">Domingo</span>
+              <span *ngSwitchCase="1">Segunda-feira</span>
+              <span *ngSwitchCase="2">Terça-feira</span>
+              <span *ngSwitchCase="3">Quarta-feira</span>
+              <span *ngSwitchCase="4">Quinta-feira</span>
+              <span *ngSwitchCase="5">Sexta-feira</span>
+              <span *ngSwitchDefault>Sábado</span>
+            </ng-container>
+
+            <span *ngIf="today.getDay() === 0">Domingo</span>
+            <span *ngIf="today.getDay() === 1">Segunda-feira</span>
+            <span *ngIf="today.getDay() === 2">Terça-feira</span>
+            <span *ngIf="today.getDay() === 3">Quarta-feira</span>
+            <span *ngIf="today.getDay() === 4">Quinta-feira</span>
+            <span *ngIf="today.getDay() === 5">Sexta-feira</span>
+            <span *ngIf="today.getDay() === 6">Sábado</span>
+          </li>
         </ul>
       </div>
     </div>
