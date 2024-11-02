@@ -10,6 +10,8 @@ import { Product } from './models/product.model';
 export class AppComponent {
   title = 'loja';
 
+  documentNumber = '01234567890';
+
   globalCount = 0;
 
   products: Product[] = [

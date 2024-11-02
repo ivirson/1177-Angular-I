@@ -1,6 +1,12 @@
 <app-header [headerCount]="globalCount" />
 
 <main class="container my-5">
+  <div class="my-5">
+    <!-- <input type="text" [(ngModel)]="documentNumber" /> -->
+    {{ documentNumber | document }}
+    {{ "2024-10-25" | date : "dd/MM/yyyy" }}
+  </div>
+
   <div class="row">
     <div class="col-md-3 mb-4" *ngFor="let item of products">
       <app-card

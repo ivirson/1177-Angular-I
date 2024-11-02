@@ -5,9 +5,9 @@
     alt="{{ product.title }}"
   />
   <div class="card-body">
-    <h5 class="card-title">{{ product.title }}</h5>
+    <h5 class="card-title">{{ product.title | lowercase }}</h5>
     <p class="card-text">{{ product.description }}</p>
-    <p class="card-text">{{ product.price }}</p>
+    <p class="card-text">{{ product.price | currency : "BRL" }}</p>
     <p class="card-text">{{ product.qty }}</p>
   </div>
   <div class="card-footer d-flex justify-content-end">
