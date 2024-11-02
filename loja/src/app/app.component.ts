@@ -10,6 +10,8 @@ import { Product } from './models/product.model';
 export class AppComponent {
   title = 'loja';
 
+  globalCount = 0;
+
   products: Product[] = [
     {
       _id: 'c633b67e-61fc-4947-b483-42556242afc3',
@@ -57,4 +59,8 @@ export class AppComponent {
       image: 'smartwatch.jpg',
     },
   ];
+
+  incrementCount(): void {
+    this.globalCount++;
+  }
 }
