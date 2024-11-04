@@ -7,6 +7,7 @@ import { FooterComponent } from './commons/components/footer/footer.component';
 import { HeaderComponent } from './commons/components/header/header.component';
 import { DocumentPipe } from './pipes/document.pipe';
 import { CardComponent } from './shared/components/card/card.component';
+import { CartComponent } from './products/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { CardComponent } from './shared/components/card/card.component';
     FooterComponent,
     CardComponent,
     DocumentPipe,
+    CartComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],

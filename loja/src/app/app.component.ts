@@ -12,8 +12,6 @@ export class AppComponent {
 
   documentNumber = '01234567890';
 
-  globalCount = 0;
-
   products: Product[] = [
     {
       _id: 'c633b67e-61fc-4947-b483-42556242afc3',
@@ -62,7 +60,10 @@ export class AppComponent {
     },
   ];
 
-  incrementCount(): void {
-    this.globalCount++;
+  cart: Product[] = [];
+
+  incrementcart(product: Product): void {
+    this.cart.push(product);
+    console.log(this.cart);
   }
 }

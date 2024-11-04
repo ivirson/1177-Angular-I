@@ -1,18 +1,33 @@
-<app-header [headerCount]="globalCount" />
+<app-header [headerCount]="cart.length" />
 
 <main class="container my-5">
-  <div class="my-5">
-    <!-- <input type="text" [(ngModel)]="documentNumber" /> -->
+  <!-- <div class="my-5">
+    <input type="text" [(ngModel)]="documentNumber" />
     {{ documentNumber | document }}
     {{ "2024-10-25" | date : "dd/MM/yyyy" }}
-  </div>
+  </div> -->
 
   <div class="row">
     <div class="col-md-3 mb-4" *ngFor="let item of products">
       <app-card
         [product]="item"
-        (incrementEmitter)="incrementCount()"
+        (incrementEmitter)="incrementcart($event)"
       ></app-card>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div
+    class="modal fade"
+    id="modal"
+    tabindex="-1"
+    aria-labelledby="modalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <app-cart [products]="cart"></app-cart>
+      </div>
     </div>
   </div>
 </main>

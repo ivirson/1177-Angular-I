@@ -8,9 +8,9 @@ import { Product } from 'src/app/models/product.model';
 })
 export class CardComponent {
   @Input() product!: Product;
-  @Output() incrementEmitter = new EventEmitter<void>();
+  @Output() incrementEmitter = new EventEmitter<Product>();
 
   increment(): void {
-    this.incrementEmitter.emit();
+    this.incrementEmitter.emit(this.product);
   }
 }
