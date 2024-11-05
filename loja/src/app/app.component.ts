@@ -59,11 +59,4 @@ export class AppComponent {
       image: 'smartwatch.jpg',
     },
   ];
-
-  cart: Product[] = [];
-
-  incrementcart(product: Product): void {
-    this.cart.push(product);
-    console.log(this.cart);
-  }
 }

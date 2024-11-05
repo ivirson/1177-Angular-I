@@ -13,7 +13,12 @@
   <div class="card-footer d-flex justify-content-end">
     <a class="btn btn-primary me-2">Editar</a>
     <a class="btn btn-outline-danger me-2">Excluir</a>
-    <button class="btn btn-success" (click)="increment()">+</button>
+    <button
+      class="btn btn-success"
+      (click)="cartService.addItemToCart(product)"
+    >
+      +
+    </button>
   </div>
 </div>
 

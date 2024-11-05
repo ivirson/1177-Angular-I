@@ -1,4 +1,4 @@
-<app-header [headerCount]="cart.length" />
+<app-header />
 
 <main class="container my-5">
   <!-- <div class="my-5">
@@ -9,10 +9,7 @@
 
   <div class="row">
     <div class="col-md-3 mb-4" *ngFor="let item of products">
-      <app-card
-        [product]="item"
-        (incrementEmitter)="incrementcart($event)"
-      ></app-card>
+      <app-card [product]="item"></app-card>
     </div>
   </div>
 
@@ -26,7 +23,7 @@
   >
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
-        <app-cart [products]="cart"></app-cart>
+        <app-cart></app-cart>
       </div>
     </div>
   </div>

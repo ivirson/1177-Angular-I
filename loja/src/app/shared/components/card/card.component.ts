@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Product } from 'src/app/models/product.model';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-card',
@@ -8,9 +9,6 @@ import { Product } from 'src/app/models/product.model';
 })
 export class CardComponent {
   @Input() product!: Product;
-  @Output() incrementEmitter = new EventEmitter<Product>();
 
-  increment(): void {
-    this.incrementEmitter.emit(this.product);
-  }
+  constructor(public cartService: CartService) {}
 }
