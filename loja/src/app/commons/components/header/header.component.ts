@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { Pages } from 'src/app/constants/pages.enum';
 import { Product } from 'src/app/models/product.model';
 import { CartService } from 'src/app/services/cart.service';
+import { PagesService } from 'src/app/services/pages.service';
 
 @Component({
   selector: 'app-header',
@@ -9,5 +11,14 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class HeaderComponent {
   cart: Product[] = [];
-  constructor(public cartService: CartService) {}
+  pages = Pages;
+
+  constructor(
+    public cartService: CartService,
+    private pagesService: PagesService
+  ) {}
+
+  navigateTo(page: Pages): void {
+    this.pagesService.setCurrentPage(page);
+  }
 }

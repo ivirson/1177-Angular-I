@@ -1,0 +1,34 @@
+<div class="container">
+  <h1>Cadastrar produto</h1>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-md-6">
+        <label class="form-label">Nome</label>
+        <input class="form-control" formControlName="title" />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Descrição</label>
+        <input class="form-control" formControlName="description" />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Preço</label>
+        <input type="number" class="form-control" formControlName="price" />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Quantidade</label>
+        <input type="number" class="form-control" formControlName="qty" />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Imagem</label>
+        <input class="form-control" formControlName="image" />
+      </div>
+
+      <div class="col-md-12 d-flex justify-content-end">
+        <button class="btn btn-primary" [disabled]="form.invalid">
+          Salvar
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

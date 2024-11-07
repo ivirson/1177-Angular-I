@@ -6,8 +6,10 @@
     <div class="container">
       <a class="navbar-brand">Loja Virtual</a>
       <nav class="nav">
-        <a class="nav-link" aria-current="page">Produtos</a>
-        <a class="nav-link">Usuários</a>
+        <a class="nav-link" aria-current="page" (click)="navigateTo(pages.LIST)"
+          >Produtos</a
+        >
+        <a class="nav-link" (click)="navigateTo(pages.CREATE)">Cadastrar</a>
         <button
           type="button"
           class="btn btn-primary position-relative"

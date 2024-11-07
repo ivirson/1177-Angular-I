@@ -1,9 +1,5 @@
 <div class="card">
-  <img
-    src="assets/images/{{ product.image }}"
-    class="card-img"
-    alt="{{ product.title }}"
-  />
+  <img [src]="product.image" class="card-img" [alt]="product.title" />
   <div class="card-body">
     <h5 class="card-title">{{ product.title | lowercase }}</h5>
     <p class="card-text">{{ product.description }}</p>
