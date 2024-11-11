@@ -14,6 +14,7 @@
       <div class="col-md-6">
         <label class="form-label">Preço</label>
         <input type="number" class="form-control" formControlName="price" />
+        <small class="text-danger" *ngIf="priceError">{{ priceError }}</small>
       </div>
       <div class="col-md-6">
         <label class="form-label">Quantidade</label>

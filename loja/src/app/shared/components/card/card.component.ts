@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Product } from 'src/app/models/product.model';
 import { CartService } from 'src/app/services/cart.service';
 
@@ -7,8 +7,14 @@ import { CartService } from 'src/app/services/cart.service';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css'],
 })
-export class CardComponent {
+export class CardComponent implements OnChanges {
   @Input() product!: Product;
 
   constructor(public cartService: CartService) {}
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['product']) {
+      console.log('Descricao mudou', this.product.description);
+    }
+  }
 }
