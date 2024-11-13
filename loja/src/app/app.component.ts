@@ -1,12 +1,27 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { Pages } from './constants/pages.enum';
 import { PagesService } from './services/pages.service';
+import { FooterComponent } from './commons/components/footer/footer.component';
+import { CartComponent } from './products/cart/cart.component';
+import { ListComponent } from './products/list/list.component';
+import { CreateComponent } from './products/create/create.component';
+import { NgIf } from '@angular/common';
+import { HeaderComponent } from './commons/components/header/header.component';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  encapsulation: ViewEncapsulation.None,
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [
+        HeaderComponent,
+        NgIf,
+        CreateComponent,
+        ListComponent,
+        CartComponent,
+        FooterComponent,
+    ],
 })
 export class AppComponent {
   title = 'loja';

@@ -2,11 +2,15 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subject, takeUntil } from 'rxjs';
 import { Product } from 'src/app/models/product.model';
+import { CardComponent } from '../../shared/components/card/card.component';
+import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-list',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css'],
+    selector: 'app-list',
+    templateUrl: './list.component.html',
+    styleUrls: ['./list.component.css'],
+    standalone: true,
+    imports: [NgFor, CardComponent],
 })
 export class ListComponent implements OnInit, OnDestroy {
   protected unsubscribe = new Subject<void>();

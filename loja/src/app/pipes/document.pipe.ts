@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'document',
+    name: 'document',
+    standalone: true,
 })
 export class DocumentPipe implements PipeTransform {
   transform(value: string): unknown {
